@@ -1,0 +1,8 @@
+function* gen(s){
+yield s;
+yield s+10;
+return 5}
+let s=gen(7)
+s.next()
+s.next()
+s.next()
