@@ -30,7 +30,6 @@ const UseEffectExample=()=>{
 
 //called whenver component changes ,update lifecycle method
 useEffect(()=>{
-  if(query.length>0){
 console.log('hello');
 
 const fetchFunc =async () =>{
@@ -41,7 +40,7 @@ const fetchFunc =async () =>{
 // whenever data comes in effects are applied
 
 fetchFunc()
-  }
+
 },[search])
 // [user]
 
@@ -65,3 +64,23 @@ No User Found
     </Card>
   )
 }
+
+
+// Custom hooks
+
+const useFetch=url=>{
+  const [x,y]=useState(null)
+
+useEffect(()=>{
+  const fetchData=async ()=>{
+    const res = await fetch(url)
+    const dataArray=await res.json()
+    y(x[0])
+  }
+  fetchData()
+})
+return x
+
+}
+
+export default useFetch
