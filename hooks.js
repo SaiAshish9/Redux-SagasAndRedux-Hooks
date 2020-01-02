@@ -30,6 +30,7 @@ const UseEffectExample=()=>{
 
 //called whenver component changes ,update lifecycle method
 useEffect(()=>{
+  if(query.length>0){
 console.log('hello');
 
 const fetchFunc =async () =>{
@@ -40,7 +41,7 @@ const fetchFunc =async () =>{
 // whenever data comes in effects are applied
 
 fetchFunc()
-
+  }
 },[search])
 // [user]
 
